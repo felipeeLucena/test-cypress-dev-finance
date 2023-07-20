@@ -1,9 +1,8 @@
-import { NewTransitionClick } from "../functions/dashboard";
-import { ProcessRegisterTransition } from "../functions/dashboard";
+import { ProcessRegisterTransitionInput, ProcessRegisterTransitionOutput, NewTransitionClick } from "./functions";
 
 describe('Cenário de Teste - Tela INICIAL', () => {
     beforeEach(() => {
-        cy.visit("https://dev-finance.netlify.app/")
+        cy.visit("/")
     });
 
     it('Verificar se o botão NOVA TRANSAÇÃO está visível', () => {
@@ -16,22 +15,24 @@ describe('Cenário de Teste - Tela INICIAL', () => {
     })
 
     it('Verificar se VALORES de ENTRADA, SAÍDA e TOTAL estão sendo registrados correntamente', () => {
-        ProcessRegisterTransition()
+        ProcessRegisterTransitionInput('Manutenção Site', 300, '2023-06-02')
+        ProcessRegisterTransitionOutput('Gastos com banco e dados', -100, '2023-06-10');
         cy.get('#incomeDisplay').should('contain', 300)
         cy.get('#expenseDisplay').should('contain', 100)
         cy.get('#totalDisplay').should('contain', 200)
     })
 
     it('Verificar se os dados estão sendo carregados corretamente após cadastrar transação', () => {
-        ProcessRegisterTransition()
-        cy.get('#data-table')
-            .should('contain', 300)
-            .should('contain', 'Manutenção Site')
-            .should('contain', '02/06/2023')
-            .should('contain', 'Gastos com banco e dados')
-            .should('contain', 100)
-            .should('contain', '10/06/2023')
-    })
+        ProcessRegisterTransitionInput('Manutenção Site', 300, '2023-06-02');
+        ProcessRegisterTransitionOutput('Gastos com banco e dados', -100, '2023-06-10');
+
+        cy.get('#data-table').should('contain', 300)
+            .and('contain', 'Manutenção Site')
+            .and('contain', '02/06/2023')
+            .and('contain', 'Gastos com banco e dados')
+            .and('contain', 100)
+            .and('contain', '10/06/2023');
+    });
 
 
 })

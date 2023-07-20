@@ -1,8 +1,8 @@
-import { NewTransitionClick } from "../functions/finances";
+import { NewTransitionClick, ProcessRegisterTransitionInput, ProcessRegisterTransitionOutput } from "./functions";
 
 describe('Cenário de Teste - Cadastro de Transações', () => {
   beforeEach(() => {
-    cy.visit("https://dev-finance.netlify.app/")
+    cy.visit("/")
   });
 
   it('Verificar se os campos do formulário NOVA TRANSAÇÃO estão visíveis', () => {
@@ -39,19 +39,11 @@ describe('Cenário de Teste - Cadastro de Transações', () => {
   })
 
   it('Verificar se os dados são cadastrados e o usuário é redirecionado para tela inicial', () => {
-    NewTransitionClick()
-    cy.get('#description').type('Manutenção site')
-    cy.get('#amount').type(300)
-    cy.get('#date').type('2023-06-02')
-    cy.get('button').click()
+    ProcessRegisterTransitionInput('Manutenção Site', 300, '2023-06-02')
   })
 
   it('Verificar se os dados de saída são cadastrados', () => {
-    NewTransitionClick()
-    cy.get('#description').type('Manutenção site')
-    cy.get('#amount').type(-100)
-    cy.get('#date').type('2023-06-02')
-    cy.get('button').click()
+    ProcessRegisterTransitionOutput('Gastos com banco e dados', -100, '2023-06-10');
   })
 
   it('Verificar se é possível SALVAR a TRANSAÇÃO sem enviar o campo DESCRIÇÃO e APARECER alert', () => {
