@@ -5,7 +5,7 @@ e aplicar a ferramenta Cypress para a realização de testes e2e com JS. Foram e
 
 <h3>Imagens do Sistema</h3>
 
-<img src="https://i.imgur.com/GjqTpW8.png" alt="ïmagem da dashboard" ?>
+<img src="https://i.imgur.com/GjqTpW8.png" alt="ïmagem da dashboard" />
 
 
 
