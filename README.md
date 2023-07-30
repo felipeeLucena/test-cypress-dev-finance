@@ -1,9 +1,7 @@
 <blockquote><h3>Dev.Finance</h3></blockquote>
-<div style="text-align: justify;">
-    <p>
-        Dev. Finance é um aplicativo para cadastro financeiro( Ganhos e Gastos ) desenvolvido durante o por alunos da MENTORAMA no curso de desenvolvimento web. Reaproveitei o sistema para criar meus próprios cenários de testes e aplicar a ferramenta Cypress para a realização de testes e2e com JS. Foram explorados recursos como: Testes Funcionais, Testes Não-Funcionais, Critérios de Aceite, BaseUrl, Commands e boas práticas. 
-    </p>
-</div>
+<p align="justify">
+Dev. Finance é um aplicativo para cadastro financeiro( Ganhos e Gastos ) desenvolvido durante o por alunos da MENTORAMA no curso de desenvolvimento web. Reaproveitei o sistema para criar meus próprios cenários de testes e aplicar a ferramenta Cypress para a realização de testes e2e com JS. Foram explorados recursos como: Testes Funcionais, Testes Não-Funcionais, Critérios de Aceite, BaseUrl, Commands e boas práticas. 
+</p>
 <blockquote><h3>Imagens do Sistema</h3></blockquote>
 
 <h2>Dashboard</h2>
